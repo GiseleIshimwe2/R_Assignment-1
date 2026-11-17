@@ -79,6 +79,7 @@ x<-c("a","b","c","d")
 x%*%y
 
 ## List
+(x<-list(TRUE,"a",5, 1+5i))
 
 
 
