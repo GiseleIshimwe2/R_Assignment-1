@@ -14,6 +14,25 @@ knitr::opts_chunk$set(echo = TRUE)
 pkgs<-c("tidyverse", "readxl","writexl","haven","DBI")
 
 ```
+## Loading packages
+```{r }
+
+## readr, dplyr, ggplot2, tidyr
+library(tidyverse)
+
+## excel files
+library(readxl)
+
+## SPSS, Stata, SAS files
+library(haven)
+
+## databases
+library(DBI)
+
+
+
+```
+
 
 ## R Markdown
 
