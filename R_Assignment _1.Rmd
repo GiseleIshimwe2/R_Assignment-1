@@ -29,10 +29,31 @@ library(haven)
 ## databases
 library(DBI)
 
+```
+## Importing data from different sources 
+```{r }
+## excel file 
+ex<-("C:/Users/NISR/Desktop/Gisele/365 Data science/Excel/FMCG data.xlsx")
+file.exists(ex)         ## should say true
+
+excel_sheets(ex)        ## list the sheet name 
+
+fmcg<-read_excel(ex)
+view(fmcg)
+head(fmcg)
+str(fmcg)
+names(fmcg)
+
+## SPSS FILE AND STATA
+write_sav(mtcars, "cars.sav")
+write_dta(mtcars, "cars.dta")
+cars_spss  <- read_sav("cars.sav")
+cars_stata <- read_dta("cars.dta")
+head(cars_spss)
+
 
 
 ```
-
 
 ## R Markdown
 
