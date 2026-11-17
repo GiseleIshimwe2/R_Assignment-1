@@ -52,6 +52,36 @@ cars_stata <- read_dta("cars.dta")
 head(cars_spss)
 
 
+```
+
+## Assignment 2
+##Practicing the first class programs 
+```{r }
+### Data structure (Vectors, Factors, Lists, Data frame, matrix and arrays)
+## Vector
+## Numeric 
+age<-c(20,25,39,30,32,25)
+summary(age)
+mean(age)
+head(age)
+
+## Logical
+y<-c(TRUE,FALSE)
+y<-c(T,F)
+
+## Characters
+x<-c("a","b","c","d")
+
+## matrix
+(x<-matrix(1:4, nrow =2, ncol =2  ))
+(y<-matrix(1:6,nrow = 2,ncol = 3))
+
+x%*%y
+
+## List
+
+
+
 
 ```
 
