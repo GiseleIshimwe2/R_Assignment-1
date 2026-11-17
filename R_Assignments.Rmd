@@ -1,0 +1,76 @@
+---
+title: "assignment"
+author: "Gisele"
+date: "2026-11-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Installing packages 
+```{r }
+
+pkgs<-c("tidyverse", "readxl","writexl","haven","DBI")
+
+```
+## Loading packages
+```{r }
+
+## readr, dplyr, ggplot2, tidyr
+library(tidyverse)
+
+## excel files
+library(readxl)
+
+## SPSS, Stata, SAS files
+library(haven)
+
+## databases
+library(DBI)
+
+```
+## Importing data from different sources 
+```{r }
+## excel file 
+ex<-("C:/Users/NISR/Desktop/Gisele/365 Data science/Excel/FMCG data.xlsx")
+file.exists(ex)         ## should say true
+
+excel_sheets(ex)        ## list the sheet name 
+
+fmcg<-read_excel(ex)
+view(fmcg)
+head(fmcg)
+str(fmcg)
+names(fmcg)
+
+## SPSS FILE AND STATA
+write_sav(mtcars, "cars.sav")
+write_dta(mtcars, "cars.dta")
+cars_spss  <- read_sav("cars.sav")
+cars_stata <- read_dta("cars.dta")
+head(cars_spss)
+
+
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
