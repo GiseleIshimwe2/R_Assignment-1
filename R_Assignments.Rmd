@@ -81,10 +81,13 @@ x%*%y
 ## List
 (x<-list(TRUE,"a",5, 1+5i))
 
-
+##Factor
+x<-factor(c("yes","no","yes","yes"))
 
 
 ```
+
+## Create a vector with NAs in it
 
 ## R Markdown
 
