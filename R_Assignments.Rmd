@@ -135,8 +135,22 @@ class_data$weight
 ```
 
 ##data set built in R
-```
+```{r }
 
+data()
+data("iris")
+iris
+variable.names(iris)
+str(iris)
+```
+## Exploration data analysis
+```{r }
+## Examine numerical variable using common summary
+
+iris
+summary(iris)
+str(iris)
+## summary statistics 
 
 ```
 
