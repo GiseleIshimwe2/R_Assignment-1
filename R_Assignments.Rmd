@@ -188,7 +188,14 @@ by(iris$Petal.Length,iris$Species,summary)
 
 
 ```
+## Visualize the differences in continuous variables between categories using Box-and-whisker plot
+```{r }
+boxplot(iris$Petal.Length~Species,data=iris,main="Comparison of categorical vs quantitative")
+```
+```{r }
+###Relationship between two categorical variables
 
 
+```
 
 
