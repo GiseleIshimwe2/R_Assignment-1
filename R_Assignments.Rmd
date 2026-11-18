@@ -230,6 +230,19 @@ dat <- read.table(text = "A   B   C   D   E   F    G
 
 barplot(as.matrix(dat))
 ```
+## Scatter plot
+```{r }
+plot(weight~height,data=class_data)
+plot(weight~height,data=class_data,main="weight and height of newborn")
+```
+```{r }
+## Linear model 
 
+plot(weight~height,data=class_data)
+abline(lm(weight~height,data=class_data))
+data_lm<-lm(height~weight,data=class_data)
+summary(data_lm)
+plot(data_lm)
+```
 
 
