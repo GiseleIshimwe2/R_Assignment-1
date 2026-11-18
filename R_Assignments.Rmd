@@ -203,6 +203,12 @@ xtabs<-xtabs(Freq~Gender+Admit,data =ucba )
 (xtabs<-xtabs(Freq~Gender+Admit,data =ucba ))
 prop.table(xtabs,1)
 
+
+```
+## Simpson’s paradox
+```{r }
+cross2<-xtabs(Freq~Gender+Admit,data=ucba[ucba$Dept=="F",])
+prop.table(cross2,1)
 ```
 
 
