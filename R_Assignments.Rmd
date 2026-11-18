@@ -194,7 +194,14 @@ boxplot(iris$Petal.Length~Species,data=iris,main="Comparison of categorical vs q
 ```
 ```{r }
 ###Relationship between two categorical variables
-
+UCBAdmissions
+View(UCBAdmissions)
+ucba<-data.frame(UCBAdmissions)
+head(ucba)
+tail(ucba)
+xtabs<-xtabs(Freq~Gender+Admit,data =ucba )
+(xtabs<-xtabs(Freq~Gender+Admit,data =ucba ))
+prop.table(xtabs,1)
 
 ```
 
