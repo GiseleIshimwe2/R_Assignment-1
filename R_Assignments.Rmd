@@ -151,7 +151,15 @@ iris
 summary(iris)
 str(iris)
 ## summary statistics 
-
+summary(iris)
+apply(iris[,1:4],1,sum)
+apply(iris [,1:4],2,mean)
+apply(iris[,1:4],1,sd)
+apply(iris[,1:4],2,sd)
+c(mean(iris$Sepal.Length),sd(iris$Sepal.Length))
+c(mean(iris$Sepal.Width),sd(iris$Sepal.Width))
+c(Mean=mean(iris$Sepal.Length),SD=sd(iris$Sepal.Length))
+c(Mean=mean(iris$Sepal.Width),SD=sd(iris$Sepal.Width))
 ```
 
 
