@@ -107,10 +107,32 @@ math_score<-c(45,50,44,NA,35)
 it_score<-c(28,39,49,50,37)
 df<-data.frame(StudentID,Student_Name,gender,math_score,it_score)
 df
+View(df)
+df[1:2]
+df[2:5]
+
+## creating data from keyboard
+df2<-data.frame(height=numeric(0),weight=numeric(0),bmi=numeric(0))
+df2<-edit(df2)
+```
+## Import data from Statistical package and from Database management systems
+
+```{r }
+library(readxl)
+class_data<-read_excel("C:/Users/NISR/Desktop/class_data.xlsx")
+variable.names(class_data)
+head(class_data)
+tail(class_data)
+class_data[1:2]
+summary(class_data$weight)
+summary(class_data$height)
+length(class_data)
+length(class_data$weight)
+class_data[ ,-1]
+class_data$weight
+
 
 ```
-
-
 
 
 

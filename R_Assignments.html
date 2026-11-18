@@ -505,6 +505,29 @@ x&lt;-factor(c(&quot;yes&quot;,&quot;no&quot;,&quot;yes&quot;,&quot;yes&quot;))<
 </div>
 <div id="create-a-vector-with-nas-in-it" class="section level2">
 <h2>Create a vector with NAs in it</h2>
+<pre class="r"><code>x&lt;-c(2,3,8,NA,1,25,NA)
+is.na(x)</code></pre>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE</code></pre>
+<pre class="r"><code>x&lt;-c(1,2,3,4,NA,6,5,NA)
+y&lt;-c(NA,20,3,8,NA,9,10,12)
+good&lt;-complete.cases(x,y)
+good</code></pre>
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE FALSE</code></pre>
+<p>##Creating data</p>
+<pre class="r"><code>## creating a data frame
+StudentID&lt;-c(1,2,3,4,5)
+Student_Name&lt;-c(&quot;Ineza&quot;,&quot;Nziza&quot;,&quot;Hirwa&quot;,&quot;Kundwa&quot;,&quot;Nkusi&quot;)
+gender&lt;-c(&quot;F&quot;,&quot;M&quot;,&quot;M&quot;,&quot;F&quot;,&quot;M&quot;)
+math_score&lt;-c(45,50,44,NA,35)
+it_score&lt;-c(28,39,49,50,37)
+df&lt;-data.frame(StudentID,Student_Name,gender,math_score,it_score)
+df</code></pre>
+<pre><code>##   StudentID Student_Name gender math_score it_score
+## 1         1        Ineza      F         45       28
+## 2         2        Nziza      M         50       39
+## 3         3        Hirwa      M         44       49
+## 4         4       Kundwa      F         NA       50
+## 5         5        Nkusi      M         35       37</code></pre>
 </div>
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
