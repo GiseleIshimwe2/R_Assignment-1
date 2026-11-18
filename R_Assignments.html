@@ -528,6 +528,86 @@ df</code></pre>
 ## 3         3        Hirwa      M         44       49
 ## 4         4       Kundwa      F         NA       50
 ## 5         5        Nkusi      M         35       37</code></pre>
+<pre class="r"><code>View(df)
+df[1:2]</code></pre>
+<pre><code>##   StudentID Student_Name
+## 1         1        Ineza
+## 2         2        Nziza
+## 3         3        Hirwa
+## 4         4       Kundwa
+## 5         5        Nkusi</code></pre>
+<pre class="r"><code>df[2:5]</code></pre>
+<pre><code>##   Student_Name gender math_score it_score
+## 1        Ineza      F         45       28
+## 2        Nziza      M         50       39
+## 3        Hirwa      M         44       49
+## 4       Kundwa      F         NA       50
+## 5        Nkusi      M         35       37</code></pre>
+<pre class="r"><code>## creating data from keyboard
+df2&lt;-data.frame(height=numeric(0),weight=numeric(0),bmi=numeric(0))
+df2&lt;-edit(df2)</code></pre>
+</div>
+<div id="import-data-from-statistical-package-and-from-database-management-systems" class="section level2">
+<h2>Import data from Statistical package and from Database management
+systems</h2>
+<pre class="r"><code>library(readxl)
+class_data&lt;-read_excel(&quot;C:/Users/NISR/Desktop/class_data.xlsx&quot;)
+variable.names(class_data)</code></pre>
+<pre><code>## [1] &quot;height&quot; &quot;weight&quot;</code></pre>
+<pre class="r"><code>head(class_data)</code></pre>
+<pre><code>## # A tibble: 6 × 2
+##   height weight
+##    &lt;dbl&gt;  &lt;dbl&gt;
+## 1     48   3000
+## 2     50   3200
+## 3     48   2900
+## 4     52   3600
+## 5     54   4000
+## 6     40    900</code></pre>
+<pre class="r"><code>tail(class_data)</code></pre>
+<pre><code>## # A tibble: 6 × 2
+##   height weight
+##    &lt;dbl&gt;  &lt;dbl&gt;
+## 1     50   3200
+## 2     48   2900
+## 3     52   3600
+## 4     54   4000
+## 5     40    900
+## 6     49   3300</code></pre>
+<pre class="r"><code>class_data[1:2]</code></pre>
+<pre><code>## # A tibble: 7 × 2
+##   height weight
+##    &lt;dbl&gt;  &lt;dbl&gt;
+## 1     48   3000
+## 2     50   3200
+## 3     48   2900
+## 4     52   3600
+## 5     54   4000
+## 6     40    900
+## 7     49   3300</code></pre>
+<pre class="r"><code>summary(class_data$weight)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     900    2950    3200    2986    3450    4000</code></pre>
+<pre class="r"><code>summary(class_data$height)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   40.00   48.00   49.00   48.71   51.00   54.00</code></pre>
+<pre class="r"><code>length(class_data)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>length(class_data$weight)</code></pre>
+<pre><code>## [1] 7</code></pre>
+<pre class="r"><code>class_data[ ,-1]</code></pre>
+<pre><code>## # A tibble: 7 × 1
+##   weight
+##    &lt;dbl&gt;
+## 1   3000
+## 2   3200
+## 3   2900
+## 4   3600
+## 5   4000
+## 6    900
+## 7   3300</code></pre>
+<pre class="r"><code>class_data$weight</code></pre>
+<pre><code>## [1] 3000 3200 2900 3600 4000  900 3300</code></pre>
 </div>
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
