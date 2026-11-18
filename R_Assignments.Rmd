@@ -162,24 +162,33 @@ c(Mean=mean(iris$Sepal.Length),SD=sd(iris$Sepal.Length))
 c(Mean=mean(iris$Sepal.Width),SD=sd(iris$Sepal.Width))
 ```
 
+### Variation and covariation using both numerical and graphs
+
+```{r }
+### Relationship between a categorical and a continuous variable
+data("iris")
+head(iris)
+iris
+head(iris)
+mean(iris$Petal.Length)
+mean(iris$Petal.Length[iris$Petal.Length=="setosa"])
+mean(iris$Petal.Length[iris$Species=="setosa"])
+mean(iris$Petal.Length[iris$Petal.Length=="versicolor"])
+mean(iris$Petal.Length[iris$Species=="versicolor"])
+mean(iris$Petal.Length[iris$Species=="virginica"])
+
+## shortcut
+by(iris$Petal.Length,iris$Species,mean)
+by(iris$Petal.Length,iris$Species,sd)
+by(iris$Petal.Length,iris$Species,summary)
 
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
