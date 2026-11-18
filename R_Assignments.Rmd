@@ -88,6 +88,30 @@ x<-factor(c("yes","no","yes","yes"))
 ```
 
 ## Create a vector with NAs in it
+```{r }
+x<-c(2,3,8,NA,1,25,NA)
+is.na(x)
+x<-c(1,2,3,4,NA,6,5,NA)
+y<-c(NA,20,3,8,NA,9,10,12)
+good<-complete.cases(x,y)
+good
+
+```
+##Creating data
+```{r }
+## creating a data frame
+StudentID<-c(1,2,3,4,5)
+Student_Name<-c("Ineza","Nziza","Hirwa","Kundwa","Nkusi")
+gender<-c("F","M","M","F","M")
+math_score<-c(45,50,44,NA,35)
+it_score<-c(28,39,49,50,37)
+df<-data.frame(StudentID,Student_Name,gender,math_score,it_score)
+df
+
+```
+
+
+
 
 
 
