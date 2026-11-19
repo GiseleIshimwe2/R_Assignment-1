@@ -271,3 +271,44 @@ tail(new_class_data,n=5)
 summary(BMI)
 stem(BMI,scale=2)
 ```
+## Date 
+```{r }
+today<-Sys.Date()
+format(today, format="%B %d %Y")
+format(today, format="%A")
+today <- Sys.Date()
+dob <- as.Date("1982-02-10")
+#today<-as.Date("2024-8-25")
+difftime(today, dob, units="days")
+ 
+```
+## subsetting
+```{r }
+manager <- c(1,2,3,4,5)
+country<- c("US","US","UK","UK","UK")
+gender<-c("M","F","F","M","F")
+age<-c(32,45,25,39,99)
+q1<-c(5,3,3,3,2)
+q2<-c(4,5,5,3,2)
+q3<-c(5,2,5,4,1)
+q4<-c(5,5,5,NA,2)
+q5<-c(5,5,2,NA,1)
+leadership<-data.frame(manager,country, gender, age, q1,q2,q3,q4,q5, stringsAsFactors = TRUE)
+leadership<-data.frame(manager,country, gender, age, q1,q2,q3,q4,q5)
+str(leadership)
+names(leadership)
+```
+```{r }
+## Missing values
+leadership$age[leadership$age==99]<-NA
+View(leadership)
+leadership$agecat[leadership$age >75]<-"Elder"
+leadership$agecat[leadership$age>=35 & leadership$age<=75]<-"Middle Aged"
+leadership$agecat[leadership$age <35]<- "Young"
+
+## One way to handle missing value
+
+is.na(leadership[,5:9])
+newdata<-na.omit(leadership)
+newdata
+```

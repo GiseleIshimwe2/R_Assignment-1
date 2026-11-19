@@ -1427,6 +1427,69 @@ tail(new_class_data,n=5)</code></pre>
 ##   12 | 68
 ##   13 | 0377</code></pre>
 </div>
+<div id="date" class="section level2">
+<h2>Date</h2>
+<pre class="r"><code>today&lt;-Sys.Date()
+format(today, format=&quot;%B %d %Y&quot;)</code></pre>
+<pre><code>## [1] &quot;November 19 2026&quot;</code></pre>
+<pre class="r"><code>format(today, format=&quot;%A&quot;)</code></pre>
+<pre><code>## [1] &quot;Thursday&quot;</code></pre>
+<pre class="r"><code>today &lt;- Sys.Date()
+dob &lt;- as.Date(&quot;1982-02-10&quot;)
+#today&lt;-as.Date(&quot;2024-8-25&quot;)
+difftime(today, dob, units=&quot;days&quot;)</code></pre>
+<pre><code>## Time difference of 16353 days</code></pre>
+</div>
+<div id="subsetting" class="section level2">
+<h2>subsetting</h2>
+<pre class="r"><code>manager &lt;- c(1,2,3,4,5)
+country&lt;- c(&quot;US&quot;,&quot;US&quot;,&quot;UK&quot;,&quot;UK&quot;,&quot;UK&quot;)
+gender&lt;-c(&quot;M&quot;,&quot;F&quot;,&quot;F&quot;,&quot;M&quot;,&quot;F&quot;)
+age&lt;-c(32,45,25,39,99)
+q1&lt;-c(5,3,3,3,2)
+q2&lt;-c(4,5,5,3,2)
+q3&lt;-c(5,2,5,4,1)
+q4&lt;-c(5,5,5,NA,2)
+q5&lt;-c(5,5,2,NA,1)
+leadership&lt;-data.frame(manager,country, gender, age, q1,q2,q3,q4,q5, stringsAsFactors = TRUE)
+leadership&lt;-data.frame(manager,country, gender, age, q1,q2,q3,q4,q5)
+str(leadership)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  9 variables:
+##  $ manager: num  1 2 3 4 5
+##  $ country: chr  &quot;US&quot; &quot;US&quot; &quot;UK&quot; &quot;UK&quot; ...
+##  $ gender : chr  &quot;M&quot; &quot;F&quot; &quot;F&quot; &quot;M&quot; ...
+##  $ age    : num  32 45 25 39 99
+##  $ q1     : num  5 3 3 3 2
+##  $ q2     : num  4 5 5 3 2
+##  $ q3     : num  5 2 5 4 1
+##  $ q4     : num  5 5 5 NA 2
+##  $ q5     : num  5 5 2 NA 1</code></pre>
+<pre class="r"><code>names(leadership)</code></pre>
+<pre><code>## [1] &quot;manager&quot; &quot;country&quot; &quot;gender&quot;  &quot;age&quot;     &quot;q1&quot;      &quot;q2&quot;      &quot;q3&quot;     
+## [8] &quot;q4&quot;      &quot;q5&quot;</code></pre>
+<pre class="r"><code>## Missing values
+leadership$age[leadership$age==99]&lt;-NA
+View(leadership)
+leadership$agecat[leadership$age &gt;75]&lt;-&quot;Elder&quot;
+leadership$agecat[leadership$age&gt;=35 &amp; leadership$age&lt;=75]&lt;-&quot;Middle Aged&quot;
+leadership$agecat[leadership$age &lt;35]&lt;- &quot;Young&quot;
+
+## One way to handle missing value
+
+is.na(leadership[,5:9])</code></pre>
+<pre><code>##         q1    q2    q3    q4    q5
+## [1,] FALSE FALSE FALSE FALSE FALSE
+## [2,] FALSE FALSE FALSE FALSE FALSE
+## [3,] FALSE FALSE FALSE FALSE FALSE
+## [4,] FALSE FALSE FALSE  TRUE  TRUE
+## [5,] FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>newdata&lt;-na.omit(leadership)
+newdata</code></pre>
+<pre><code>##   manager country gender age q1 q2 q3 q4 q5      agecat
+## 1       1      US      M  32  5  4  5  5  5       Young
+## 2       2      US      F  45  3  5  2  5  5 Middle Aged
+## 3       3      UK      F  25  3  5  5  5  2       Young</code></pre>
+</div>
 
 
 
