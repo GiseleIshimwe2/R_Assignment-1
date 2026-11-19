@@ -243,6 +243,26 @@ abline(lm(weight~height,data=class_data))
 data_lm<-lm(height~weight,data=class_data)
 summary(data_lm)
 plot(data_lm)
+hist(class_data$height)
+hist(class_data$height,col="blue")
+
+
 ```
+## linear with other model
 
+```{r }
+plot(weight~height,data=class_data)
+abline(lm(weight~height,data=class_data))
+lines(lowess(class_data$weight,class_data$height),col="blue")
+cor(class_data$weight,class_data$height)
+lm(weight~height,data = class_data)
 
+```
+## Data management 
+```{r }
+attach(class_data)
+(BMI<-weight/(height/100)^2)
+head(cbind(class_data,BMI),n=5)
+new_class_data<-(cbind(class_data,BMI))
+tail(new_class_data,n=5)
+```
