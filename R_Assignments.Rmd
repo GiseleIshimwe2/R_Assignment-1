@@ -266,3 +266,8 @@ head(cbind(class_data,BMI),n=5)
 new_class_data<-(cbind(class_data,BMI))
 tail(new_class_data,n=5)
 ```
+## Summary of BMI
+```{r }
+summary(BMI)
+stem(BMI,scale=2)
+```
